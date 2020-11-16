@@ -1,0 +1,84 @@
+{
+  "name": "Etch.OrchardCore.PostcodeSearch",
+  "displayName": "Postcode Search",
+  "description": "Provides postcode search.",
+  "author": "Etch",
+  "website": "https://etchuk.com",
+  "version": "0.1.0",
+  "issetuprecipe": false,
+  "categories": ["postcode", "search"],
+  "tags": ["postcode", "search"],
+  "steps": [
+    {
+      "name": "ContentDefinition",
+      "ContentTypes": [
+        {
+          "Name": "PostcodeSearch",
+          "DisplayName": "Postcode Search",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Listable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "PostcodeSearch",
+              "Name": "PostcodeSearch",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                },
+                "LinkableContentTypes": [],
+                "GalleryPartSettings": {
+                  "ThumbnailWidth": 480,
+                  "ThumbnailHeight": 270
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ ContentItem | display_text | slugify }}",
+                  "AllowUpdatePath": true
+                },
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "ContentParts": [
+        {
+          "Name": "PostcodeSearch",
+          "Settings": {
+            "ContentPartSettings": {
+              "DisplayName": "Postcode Search",
+              "Description": "Adds postcode search to page."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        }
+      ]
+    }
+  ]
+}

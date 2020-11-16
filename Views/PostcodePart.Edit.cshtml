@@ -1,0 +1,25 @@
+﻿@using Etch.OrchardCore.PostcodeSearch.ViewModels;
+
+@model PostcodeViewModel
+
+<fieldset class="form-group">
+    <h5>@T["Postcode"]</h5>
+
+    <div class="row col-sm-6">
+        <label asp-for="Postcode">@T["Postcode"]</label>
+        <input asp-for="Postcode" placeholder="Postcode" class="form-control medium" />
+        <span class="hint">@T["When postcode entered, the longitude and latitude will be retrieved automatically."]</span>
+    </div>
+</fieldset>
+<fieldset class="form-group">
+    <div class="row col-sm-6">
+        <label asp-for="Longitude">@T["Longitude"]</label>
+        <input asp-for="Longitude" placeholder="Longitude" class="form-control medium" />
+    </div>
+</fieldset>
+<fieldset class="form-group">
+    <div class="row col-sm-6">
+        <label asp-for="Latitude">@T["Latitude"]</label>
+        <input asp-for="Latitude" placeholder="Latitude" class="form-control medium" />
+    </div>
+</fieldset>
