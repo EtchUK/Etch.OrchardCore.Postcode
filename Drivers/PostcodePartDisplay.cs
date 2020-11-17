@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Etch.OrchardCore.PostcodeSearch.API;
-using Etch.OrchardCore.PostcodeSearch.Models;
-using Etch.OrchardCore.PostcodeSearch.ViewModels;
+using Etch.OrchardCore.Postcode.API;
+using Etch.OrchardCore.Postcode.Models;
+using Etch.OrchardCore.Postcode.ViewModels;
 using Microsoft.Extensions.Localization;
 using OrchardCore.ContentManagement.Display.ContentDisplay;
 using OrchardCore.ContentManagement.Display.Models;
@@ -10,7 +10,7 @@ using OrchardCore.DisplayManagement.Views;
 using OrchardCore.Mvc.ModelBinding;
 
 
-namespace Etch.OrchardCore.PostcodeSearch.Drivers
+namespace Etch.OrchardCore.Postcode.Drivers
 {
 
     public class PostcodePartDisplay : ContentPartDisplayDriver<PostcodePart>
@@ -53,7 +53,8 @@ namespace Etch.OrchardCore.PostcodeSearch.Drivers
 
             if (await updater.TryUpdateModelAsync(model, Prefix))
             {
-                var response = await PostcodesApi.GetGameData(model.Postcode);
+                var postcodesApi = new PostcodesApi();
+                var response = await postcodesApi.GetGameData(model.Postcode);
 
                 part.Postcode = model.Postcode;
                 part.Longitude = response != null && !string.IsNullOrEmpty(response.FirstResult.Postcode) ? response.FirstResult.Longitude : model.Longitude;

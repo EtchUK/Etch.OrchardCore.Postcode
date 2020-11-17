@@ -1,16 +1,27 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Etch.OrchardCore.PostcodeSearch.API.Models;
+using Castle.Core.Logging;
+using Etch.OrchardCore.Postcode.API.Models;
 using Newtonsoft.Json;
 
-namespace Etch.OrchardCore.PostcodeSearch.API
+namespace Etch.OrchardCore.Postcode.API
 {
     public class PostcodesApi
     {
+        #region Constants
+
         private const string URL = "https://api.postcodes.io/postcodes?q=";
 
-        public static async Task<PostcodesApiModel> GetGameData(string postcode)
+        #endregion
+
+        #region Dependencies
+
+        public ILogger Logger { get; set; } = new NullLogger();
+
+        #endregion
+
+        public async Task<PostcodesApiModel> GetGameData(string postcode)
         {
             try
             {
@@ -25,9 +36,9 @@ namespace Etch.OrchardCore.PostcodeSearch.API
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-
+                Logger.Error(string.Format("{0}, Error retrieving data from API.", e));
             }
 
             return null;

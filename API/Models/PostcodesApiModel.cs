@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Etch.OrchardCore.PostcodeSearch.API.Models
+namespace Etch.OrchardCore.Postcode.API.Models
 {
     public class PostcodesApiModel
     {

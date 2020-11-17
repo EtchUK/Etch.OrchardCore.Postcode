@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Etch.OrchardCore.PostcodeSearch.API;
-using Etch.OrchardCore.PostcodeSearch.Models;
-using Etch.OrchardCore.PostcodeSearch.ViewModels;
+using Etch.OrchardCore.Postcode.API;
+using Etch.OrchardCore.Postcode.Models;
+using Etch.OrchardCore.Postcode.ViewModels;
 using GeoCoordinatePortable;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Localization;
@@ -16,9 +16,9 @@ using OrchardCore.DisplayManagement.Views;
 using UKIE.OrchardCore.PostcodeSearch.Indexes;
 using YesSql;
 
-namespace Etch.OrchardCore.PostcodeSearch.Drivers
+namespace Etch.OrchardCore.Postcode.Drivers
 {
-    public class PostcodeSearchPartDisplay : ContentPartDisplayDriver<Models.PostcodeSearch>
+    public class PostcodeSearchPartDisplay : ContentPartDisplayDriver<PostcodeSearch>
     {
         #region Constants
 
@@ -47,14 +47,15 @@ namespace Etch.OrchardCore.PostcodeSearch.Drivers
 
         #region Overrides
 
-        public override async Task<IDisplayResult> DisplayAsync(Models.PostcodeSearch part, BuildPartDisplayContext context)
+        public override async Task<IDisplayResult> DisplayAsync(PostcodeSearch part, BuildPartDisplayContext context)
         {
             var contents = new List<PostcodeSearchViewModel>();
             var results = Enumerable.Empty<ContentItem>();
             ContentItem[] list = null;
 
             var postcode = GetQuerystringValue(QueryStringPostcode);
-            var response = await PostcodesApi.GetGameData(postcode);
+            var postcodesApi = new PostcodesApi();
+            var response = await postcodesApi.GetGameData(postcode);
 
             if (response != null && !string.IsNullOrEmpty(postcode))
             {

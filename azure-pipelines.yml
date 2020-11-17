@@ -28,19 +28,19 @@ stages:
               SonarCloud: "SC"
               organization: "$(SC_ORGANIZATION)"
               scannerMode: "MSBuild"
-              projectKey: "Etch.OrchardCore.PostcodeSearch"
-              projectName: "Etch.OrchardCore.PostcodeSearch"
+              projectKey: "Etch.OrchardCore.Postcode"
+              projectName: "Etch.OrchardCore.Postcode"
 
           - task: tmarkovski.projectversionasvariable.versionintovariable.projectversionasvariable@1
-            displayName: "Get Project Version as variables from Etch.OrchardCore.PostcodeSearch.csproj"
+            displayName: "Get Project Version as variables from Etch.OrchardCore.Postcode.csproj"
             inputs:
-              path: ./Etch.OrchardCore.PostcodeSearch.csproj
+              path: ./Etch.OrchardCore.Postcode.csproj
 
           - task: DotNetCoreCLI@2
             displayName: "Build module"
             inputs:
               arguments: "-c $(BuildConfiguration)"
-              projects: "./Etch.OrchardCore.PostcodeSearch.csproj"
+              projects: "./Etch.OrchardCore.Postcode.csproj"
 
           - task: SonarCloudAnalyze@1
             displayName: "Run SonarCloud Analysis"
@@ -49,7 +49,7 @@ stages:
             displayName: "dotnet pack"
             inputs:
               command: pack
-              packagesToPack: "./Etch.OrchardCore.PostcodeSearch.csproj"
+              packagesToPack: "./Etch.OrchardCore.Postcode.csproj"
               versioningScheme: byEnvVar
               versionEnvVar: "VERSION_MAJORMINORPATCH"
 

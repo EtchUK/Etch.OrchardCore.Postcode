@@ -1,7 +1,7 @@
-﻿using Etch.OrchardCore.PostcodeSearch;
-using Etch.OrchardCore.PostcodeSearch.Drivers;
-using Etch.OrchardCore.PostcodeSearch.Models;
-using Etch.OrchardCore.PostcodeSearch.ViewModels;
+﻿using Etch.OrchardCore.Postcode;
+using Etch.OrchardCore.Postcode.Drivers;
+using Etch.OrchardCore.Postcode.Models;
+using Etch.OrchardCore.Postcode.ViewModels;
 using Fluid;
 using Microsoft.Extensions.DependencyInjection;
 using OrchardCore.ContentManagement;
@@ -22,7 +22,7 @@ namespace Etch.OrchardCore.PeopleContentFeed
 
         public override void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<ContentPart, PostcodeSearch.Models.PostcodeSearch>();
+            services.AddSingleton<ContentPart, PostcodeSearch>();
             services.AddSingleton<ContentPart, PostcodePart>();
 
             services.AddScoped<IContentPartDisplayDriver, PostcodePartDisplay>();

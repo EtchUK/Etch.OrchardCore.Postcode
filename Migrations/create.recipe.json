@@ -1,5 +1,5 @@
 {
-  "name": "Etch.OrchardCore.PostcodeSearch",
+  "name": "Etch.OrchardCore.Postcode",
   "displayName": "Postcode Search",
   "description": "Provides postcode search.",
   "author": "Etch",

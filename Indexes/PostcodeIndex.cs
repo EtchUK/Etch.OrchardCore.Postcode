@@ -1,4 +1,4 @@
-﻿using Etch.OrchardCore.PostcodeSearch.Models;
+﻿using Etch.OrchardCore.Postcode.Models;
 using OrchardCore.ContentFields.Fields;
 using OrchardCore.ContentManagement;
 using YesSql.Indexes;

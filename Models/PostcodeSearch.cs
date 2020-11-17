@@ -1,6 +1,6 @@
 ﻿using OrchardCore.ContentManagement;
 
-namespace Etch.OrchardCore.PostcodeSearch.Models
+namespace Etch.OrchardCore.Postcode.Models
 {
     public class PostcodeSearch : ContentPart
     {

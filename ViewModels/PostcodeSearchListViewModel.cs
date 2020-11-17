@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using OrchardCore.ContentManagement;
 
-namespace Etch.OrchardCore.PostcodeSearch.ViewModels
+namespace Etch.OrchardCore.Postcode.ViewModels
 {
     public class PostcodeSearchListViewModel
     {

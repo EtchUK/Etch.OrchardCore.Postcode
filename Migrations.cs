@@ -5,7 +5,7 @@ using OrchardCore.Data.Migration;
 using OrchardCore.Recipes.Services;
 using UKIE.OrchardCore.PostcodeSearch.Indexes;
 
-namespace Etch.OrchardCore.PostcodeSearch
+namespace Etch.OrchardCore.Postcode
 {
     public class Migrations : DataMigration
     {

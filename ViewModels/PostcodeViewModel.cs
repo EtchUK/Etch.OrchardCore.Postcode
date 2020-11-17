@@ -1,4 +1,4 @@
-﻿namespace Etch.OrchardCore.PostcodeSearch.ViewModels
+﻿namespace Etch.OrchardCore.Postcode.ViewModels
 {
     public class PostcodeViewModel
     {
