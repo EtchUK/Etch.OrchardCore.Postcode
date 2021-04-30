@@ -5,6 +5,6 @@ using OrchardCore.Modules.Manifest;
     Category = "Content",
     Description = "Add postcode search functionality.",
     Name = "Postcode search",
-    Version = "0.0.1",
+    Version = "0.1.0",
     Website = "https://etchuk.com"
 )]
