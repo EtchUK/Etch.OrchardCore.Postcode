@@ -44,7 +44,8 @@ namespace Etch.OrchardCore.Postcode.Drivers
                 model.Postcode = part.Postcode;
                 model.Longitude = part.Longitude;
                 model.Latitude = part.Latitude;
-            });
+            })
+            .Location("Parts#Postcode:15");
         }
 
         public async override Task<IDisplayResult> UpdateAsync(PostcodePart part, IUpdateModel updater, UpdatePartEditorContext context)

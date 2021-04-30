@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.1.0-rc1</Version>
+    <Version>0.1.0-rc2</Version>
     <PackageId>Etch.OrchardCore.Postcode</PackageId>
     <Title>Postcode content part</Title>
     <Authors>Etch</Authors>
@@ -13,22 +13,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.ContentManagement" Version="1.0.0-rc1-10004" />
-    <PackageReference Include="OrchardCore.ContentManagement.Display" Version="1.0.0-rc1-10004" />
-    <PackageReference Include="OrchardCore.DisplayManagement" Version="1.0.0-rc1-10004" />
-    <PackageReference Include="OrchardCore.ResourceManagement" Version="1.0.0-rc1-10004" />
-    <PackageReference Include="OrchardCore.Module.Targets" Version="1.0.0-rc1-10004" />
-    <PackageReference Include="OrchardCore.ContentFields" Version="1.0.0-rc1-10004" />
+    <PackageReference Include="OrchardCore.ContentManagement" Version="1.0.0-rc2-13450" />
+    <PackageReference Include="OrchardCore.ContentManagement.Display" Version="1.0.0-rc2-13450" />
+    <PackageReference Include="OrchardCore.DisplayManagement" Version="1.0.0-rc2-13450" />
+    <PackageReference Include="OrchardCore.ResourceManagement" Version="1.0.0-rc2-13450" />
+    <PackageReference Include="OrchardCore.Module.Targets" Version="1.0.0-rc2-13450" />
+    <PackageReference Include="OrchardCore.ContentFields" Version="1.0.0-rc2-13450" />
     <PackageReference Include="GeoCoordinate.NetCore" Version="1.0.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Indexes\" />
-    <Folder Include="API\" />
-    <Folder Include="API\Models\" />
   </ItemGroup>
 </Project>
