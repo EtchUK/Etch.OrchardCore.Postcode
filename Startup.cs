@@ -22,11 +22,11 @@ namespace Etch.OrchardCore.PeopleContentFeed
 
         public override void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<ContentPart, PostcodeSearch>();
-            services.AddSingleton<ContentPart, PostcodePart>();
+            services.AddContentPart<PostcodeSearch>()
+                .UseDisplayDriver<PostcodeSearchPartDisplay>();
 
-            services.AddScoped<IContentPartDisplayDriver, PostcodePartDisplay>();
-            services.AddScoped<IContentPartDisplayDriver, PostcodeSearchPartDisplay>();
+            services.AddContentPart<PostcodePart>()
+                .UseDisplayDriver<PostcodePartDisplay>();
 
             services.AddScoped<IDataMigration, Migrations>();
             services.AddSingleton<IIndexProvider, PostcodeIndexProvider>();
