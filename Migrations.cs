@@ -36,10 +36,11 @@ namespace Etch.OrchardCore.Postcode
                 .WithDescription("Adds postcode, longitude, latitude.")
             );
 
-            SchemaBuilder.CreateMapIndexTable(nameof(PostcodeIndex), table => table
+            SchemaBuilder.CreateMapIndexTable(typeof(PostcodeIndex), table => table
                 .Column<string>("Postcode", c => c.WithDefault(null))
                 .Column<string>("Longitude", c => c.WithDefault(null))
-                .Column<string>("Latitude", c => c.WithDefault(null))
+                .Column<string>("Latitude", c => c.WithDefault(null)),
+                null
             );
 
             _contentDefinitionManager.AlterPartDefinition("PostcodeSearch", part => part
