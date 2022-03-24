@@ -17,11 +17,15 @@ namespace Etch.OrchardCore.PeopleContentFeed
     {
         static Startup()
         {
-            TemplateContext.GlobalMemberAccessStrategy.Register<PostcodeViewModel>();
         }
 
         public override void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<TemplateOptions>(o =>
+            {
+                o.MemberAccessStrategy.Register<PostcodeViewModel>();
+            });
+
             services.AddContentPart<PostcodeSearch>()
                 .UseDisplayDriver<PostcodeSearchPartDisplay>();
 
